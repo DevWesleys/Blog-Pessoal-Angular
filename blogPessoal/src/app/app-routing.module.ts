@@ -4,12 +4,17 @@ import { MenuComponent } from './menu/menu.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'entrar', pathMatch: 'full'},
+
   {path: 'entrar', component: EntrarComponent},
   {path: 'cadastrar', component: CadastrarComponent},
-  {path: 'menu', component: MenuComponent}
+ 
+
+{path: 'inicio', component: InicioComponent}
+
 ];
 
 @NgModule({
