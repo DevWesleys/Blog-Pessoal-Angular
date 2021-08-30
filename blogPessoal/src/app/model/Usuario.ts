@@ -3,10 +3,10 @@ import { Postagem } from "./Postagem"
 export class Usuario{
     public id: number
     public nome:string
-    public senha:string
     public usuario: string
-    public foto: string
+    public senha:string
+    public dataNascimento: Date
     public tipo:string
-    public postagem: Postagem[]
-    public dataNascimento:Date
+    public foto: string
+    public postagem: Postagem[] 
     }

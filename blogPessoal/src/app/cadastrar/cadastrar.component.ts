@@ -11,9 +11,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-usuario: Usuario = new Usuario
-confirmarSenha: string
-tipoUsuario: string
+usuario: Usuario = new Usuario();
+confirmarSenha: string;
+tipoUsuario: string;
 
   constructor(
     private authService: AuthService,
@@ -22,7 +22,7 @@ tipoUsuario: string
     ) { }
 
   ngOnInit()  {
-    window.scroll(0,0)
+    window.scroll(0,0);
 
   }
 

@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 #img-bg {
     background-image: url("https://i.imgur.com/6TF67Nx.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Sniglet', cursive;
+    color: #e66c08;
+}
+
+label {
+    font-family: 'Sniglet', cursive;
+    color: #633904;
 }
