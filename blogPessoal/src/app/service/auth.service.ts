@@ -26,6 +26,10 @@ cadastrar(usuario: Usuario): Observable<Usuario> {
       usuario)
   }
 
+getByIdUsuario(id:number) : Observable<Usuario>{
+  return this.http.get<Usuario>(`https://blogpessoalwesley.herokuapp.com/usuarios/${id}`)
+}
+
 logado(){
   let ok: boolean = false
 
