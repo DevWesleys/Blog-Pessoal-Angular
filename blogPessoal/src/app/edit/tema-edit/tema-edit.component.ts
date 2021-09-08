@@ -13,8 +13,8 @@ export class TemaEditComponent implements OnInit {
   tema: Tema = new Tema();
 
   constructor(
-    private temaService: TemaService,
     private router: Router,
+    private temaService: TemaService,
     private route: ActivatedRoute
   ) {}
 
@@ -33,11 +33,12 @@ export class TemaEditComponent implements OnInit {
     });
   }
 
-  atualizar() {
-    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
-      this.tema = resp;
-      alert('Tema atualizado com sucesso!');
-      this.router.navigate(['/tema']);
-    });
+  atualizar(){
+    this.temaService.putTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      alert('Tema modificado com sucesso!')
+      this.router.navigate(['/tema'])
+    })
+
   }
 }

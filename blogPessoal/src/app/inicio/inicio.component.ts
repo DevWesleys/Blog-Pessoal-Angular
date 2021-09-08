@@ -34,15 +34,18 @@ listaPostagens: Postagem[]
   ) {}
 
   ngOnInit() {
+
+window.scroll(0,0)
+
     if (environment.token == '') {
       alert('Sua seção expirou, faça um login novamente.');
       this.router.navigate(['/entrar']);
     }
-    this.getAllTemas()
+    this.findAllTemas()
     this.getAll()
   }
 
-  getAllTemas() {
+  findAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp;
     });
