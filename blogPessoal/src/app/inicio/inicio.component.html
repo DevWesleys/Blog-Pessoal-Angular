@@ -8,7 +8,6 @@
                     <h5 class="fs-18">Use esse espaço para expor suas ideias e pensamentos :D</h5>
                 </div>
             </div>
-
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-6">
                     <button type="button" class="btn btn-light mr-3" data-toggle="modal" data-target="#novaPostagem">
@@ -18,11 +17,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-6">
             <img src="https://i.imgur.com/PiWN0y3.png " alt="Imagem de Fundo" height="500px">
         </div>
-
     </div>
 
     <div class="container mb-5 mt-5" id="postagens">
@@ -91,50 +88,52 @@
                             <p class="card-text">
                                 <small class="text-muted">{{item.data | date: "dd/MM/yyyy "}} ás {{item.data |  date: "HH:mm "}}</small></p>
                             <p class="card-text">
-                                <small class="text-muted"> by:{{item.usuario.nome}}>
-                            </small></p>
+                                <small class="text-muted">
+                            </small>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- fim postagem tema -->
-
-
-
+        </div>
+    </div>
+    <!-- fim postagem tema -->
 
 
-            <!-- modal -->
-            <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalLongoExemplo">Nova Postagem</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+
+
+
+    <!-- modal -->
+    <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Nova Postagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="titulo">Título</label>
-                                <input [(ngModel)]="postagem.titulo" type=" text" class="form-control" id="titulo" placeholder="Digite o titulo">
-                            </div>
-                            <div class="form-group">
-                                <label for="texto">Texto</label>
-                                <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto " id="texto" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input [(ngModel)]="postagem.titulo" type=" text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Texto</label>
+                        <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto " id="texto" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um
                                 novo </a>:</label>
-                                <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
                             <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.descricao}}</option>
                         </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal ">Publicar</button>
-                        </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publicar()">Publicar</button>
+                </div>
             </div>
+        </div>
+    </div>

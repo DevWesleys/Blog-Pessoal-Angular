@@ -30,7 +30,7 @@ export class UserEditComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.idUser = this.route.snapshot.params['id']
-    this.findByIdUser(this.idUser)
+    this.findByIdUsuario(this.idUser)
   }
   confirmSenha(event: any){
     this.confirmarSenha = event.target.value
@@ -46,7 +46,7 @@ atualizar(){
   if(this.usuario.senha != this.confirmarSenha){
     alert("As senhas estão incorretas.")
   }else{
-    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) =>{ 
+    this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) =>{ 
       this.usuario = resp
       this.router.navigate(['/inicio'])
       alert("Usuário atualizado com sucesso , faça o login novamente")
@@ -55,11 +55,12 @@ atualizar(){
       environment.nome=''
       environment.foto=''
       environment.id=0
+      environment.foto =''
       this.router.navigate(['/entrar'])
     })
   }
 }
-findByIdUser(id: number){
+findByIdUsuario(id: number){
   this.authService.getByIdUsuario(id).subscribe((resp: Usuario)=>{
     this.usuario = resp
   })
